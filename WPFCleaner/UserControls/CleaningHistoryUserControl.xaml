@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="WPFCleaner.UserControls.CleaningHistoryUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFCleaner.UserControls"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DesignHeight="540" d:DesignWidth="1020">
+    <Grid Background="#FF05191F">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--#region Deleted temp files-->
+        <Grid Grid.Row="0">
+            <Label HorizontalAlignment="Center" Foreground="White" FontSize="20">Deleted Temp Files</Label>
+            
+            <ListBox x:Name="TmpFilesLB" Margin="3 30 3 10" ItemsSource="{Binding TmpFiles}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border x:Name="Border" Padding="8" BorderThickness="0 0 0 1" BorderBrush="{DynamicResource MaterialDesignDivider}">
+                            <Grid Width="1020">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!--File info-->
+                                <TextBlock Grid.Column="0" Margin="5" Text="{Binding FileName}" FontSize="15" Foreground="White" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Margin="5" Text="{Binding FullPath}" FontSize="15" Foreground="White" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Margin="5" Text="{Binding Extension}" FontSize="15" Foreground="White" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="3" Margin="5" Text="{Binding Size}" FontSize="15" Foreground="White" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="4" Margin="5" Text="{Binding Deleted}" FontSize="15" Foreground="White" TextAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region Cookie files-->
+        <Grid Grid.Row="1">
+            <Label HorizontalAlignment="Center" Foreground="White" FontSize="20">Cookies</Label>
+
+            <ListBox x:Name="CookiesLB" Margin="3 30 3 3" ItemsSource="{Binding Cookies}" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border x:Name="Border" Padding="8" BorderThickness="0 0 0 1" BorderBrush="{DynamicResource MaterialDesignDivider}">
+                            <Grid Width="1020">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="9*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!--File info-->
+                                <TextBlock Grid.Column="0" Margin="5" Text="{Binding FileName}" FontSize="15" Foreground="White" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Margin="5" Text="{Binding FullPath}" FontSize="15" Foreground="White" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Margin="5" Text="{Binding BrowserName}" FontSize="15" Foreground="White" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="3" Margin="5" Text="{Binding Cleared}" FontSize="15" Foreground="White" TextAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        <!--#endregion-->
+    </Grid>
+</UserControl>

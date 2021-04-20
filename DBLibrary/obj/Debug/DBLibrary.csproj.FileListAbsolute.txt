@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\DBLibrary.dll.config
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\DBLibrary.dll
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\DBLibrary.pdb
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.csproj.CopyComplete
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.dll
+C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.pdb
