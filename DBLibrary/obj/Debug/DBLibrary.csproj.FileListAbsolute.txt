@@ -10,3 +10,15 @@ C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.cspr
 C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.csproj.CopyComplete
 C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.dll
 C:\Users\User\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.pdb
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\DBLibrary.dll.config
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\DBLibrary.dll
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\DBLibrary.pdb
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.csproj.AssemblyReference.cache
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.csproj.CopyComplete
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.dll
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\DBLibrary\obj\Debug\DBLibrary.pdb
