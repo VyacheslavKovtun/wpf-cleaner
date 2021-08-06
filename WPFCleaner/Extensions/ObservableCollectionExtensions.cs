@@ -17,5 +17,16 @@ namespace WPFCleaner.Extensions
             }
             return collection;
         }
+
+        public static void SortProcessesByMemory<TSource, TKey>(this ObservableCollection<TSource> source, Func<TSource, TKey> keySelector)
+        {
+            List<TSource> sortedList = source.OrderBy(keySelector).ToList();
+            sortedList.Reverse();
+            source.Clear();
+            foreach(var item in sortedList)
+            {
+                source.Add(item);
+            }
+        }
     }
 }

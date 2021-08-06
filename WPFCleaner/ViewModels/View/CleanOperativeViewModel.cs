@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using WPFCleaner.Commands;
 using WPFCleaner.ViewModels.Models;
+using WPFCleaner.Extensions;
 
 namespace WPFCleaner.ViewModels.View
 {
@@ -99,6 +100,8 @@ namespace WPFCleaner.ViewModels.View
                 }
                 catch(Exception ex) { }
             }
+
+            Processes.SortProcessesByMemory(p => p.MemorySize);
         }
 
         private void CloseProcesses(string name)
