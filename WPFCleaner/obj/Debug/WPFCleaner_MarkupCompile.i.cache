@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Desktop\Projects\WPF\WPFCleaner\WPFCleaner\obj\Debug\
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\WPFCleaner\obj\Debug\
 WPFCleaner
 none
 false
 DEBUG;TRACE
-C:\Users\User\Desktop\Projects\WPF\WPFCleaner\WPFCleaner\App.xaml
+C:\Users\Vyacheslav\Desktop\Projects\WPF\WPFCleaner\WPFCleaner\App.xaml
 566304757
 
-19333183389
-21950003270
+20-44207815
+211014636342
 MainDictionary.xaml;MainWindow.xaml;UserControls\CleaningHistoryUserControl.xaml;UserControls\CleanMemoryUserControl.xaml;UserControls\CleanOperativeUserControl.xaml;
 
-False
+True
 

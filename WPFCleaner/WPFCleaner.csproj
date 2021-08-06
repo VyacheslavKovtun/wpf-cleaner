@@ -82,6 +82,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\ActionCommand.cs" />
     <Compile Include="Config\AutoMapperProfile.cs" />
+    <Compile Include="Extensions\ObservableCollectionExtensions.cs" />
     <Compile Include="Models\AutoMapperBase.cs" />
     <Compile Include="UserControls\CleaningHistoryUserControl.xaml.cs">
       <DependentUpon>CleaningHistoryUserControl.xaml</DependentUpon>

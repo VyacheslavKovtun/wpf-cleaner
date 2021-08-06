@@ -2,6 +2,7 @@
 using DBLibrary.Models.Repository;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,8 @@ using System.Threading.Tasks;
 using WPFCleaner.Models;
 using WPFCleaner.UserControls;
 using WPFCleaner.ViewModels.Models;
+using WPFCleaner.Extensions;
+using System.Windows.Threading;
 
 namespace WPFCleaner.ViewModels.View
 {
@@ -24,6 +27,7 @@ namespace WPFCleaner.ViewModels.View
         CleanMemoryUserControl cleanMemoryUC;
         public List<FileInfo> tmpFiles = new List<FileInfo>();
         public List<FileInfo> cookies = new List<FileInfo>();
+        public ObservableCollection<FileInfo> CleaningFiles { get; set; } = new ObservableCollection<FileInfo>();
 
         public CleanMemoryViewModel() { }
 
@@ -32,6 +36,17 @@ namespace WPFCleaner.ViewModels.View
             unitOfWork = UnitOfWork.Instance;
             autoMapper = AutoMapperBase.Instance;
             cleanMemoryUC = userControl;
+
+            Analyzing();
+        }
+
+        private void Analyzing()
+        {
+            App.Current.Dispatcher?.BeginInvoke(new Action(() =>
+            {
+                GetTempFiles();
+                GetCookies();
+            }));
         }
 
         public void Clean()
@@ -40,11 +55,9 @@ namespace WPFCleaner.ViewModels.View
             cookies.Clear();
 
             Task.Run(() =>
-            {
-                GetTempFiles();
+            {   
                 CleanTempFiles();
 
-                GetCookies();
                 CleanCookies();
             });
         }
@@ -57,9 +70,20 @@ namespace WPFCleaner.ViewModels.View
                 DirectoryInfo dirInfo = new DirectoryInfo(path);
                 try
                 {
-                    tmpFiles.AddRange(dirInfo.GetFiles("*", SearchOption.AllDirectories));
+                    var files = dirInfo.GetFiles("*", SearchOption.AllDirectories);
+                    foreach (var file in files)
+                    {
+                        var monthsDifference = ((DateTime.Now.Year - file.LastAccessTime.Year) * 12) + DateTime.Now.Month - file.LastAccessTime.Month;
+                        if (monthsDifference >= 1)
+                            tmpFiles.Add(file);
+                    }
                 }
                 catch (Exception ex) { }
+
+                App.Current.Dispatcher?.BeginInvoke(new Action(() =>
+                {
+                    CleaningFiles.AddFileInfoRange(tmpFiles);
+                }));
                 RefreshCleanUC?.Invoke(true);
             }).Wait();
         }
@@ -78,15 +102,24 @@ namespace WPFCleaner.ViewModels.View
                 operaPath += @"\Opera Software\Opera Stable\Cookies";
                 pathes.Add(operaPath);
 
+                string edgePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                edgePath += @"\Microsoft\Edge\User Data\Default\Cookies";
+                pathes.Add(edgePath);
+
                 foreach (var path in pathes)
                 {
                     FileInfo fileInfo = new FileInfo(path);
-                    if (fileInfo.Exists)
+                    if (fileInfo.Exists && fileInfo.Length != 0)
                     {
                         cookies.Add(fileInfo);
                     }
                 }
 
+                App.Current.Dispatcher?.BeginInvoke(new Action(() =>
+                {
+                    CleaningFiles.AddFileInfoRange(cookies);
+
+                }));
                 RefreshCleanUC?.Invoke(true);
             }).Wait();
         }
@@ -114,6 +147,7 @@ namespace WPFCleaner.ViewModels.View
 
                             //deleting file
                             file.Delete();
+                            CleaningFiles.Remove(file);
 
                             //save info of the file to db
                             unitOfWork.DeletedFileRepository.Create(fileDb);
@@ -145,6 +179,7 @@ namespace WPFCleaner.ViewModels.View
                     //closing browsers processes
                     var chromeProc = Process.GetProcessesByName("chrome");
                     var operaProc = Process.GetProcessesByName("opera");
+                    var edgeProc = Process.GetProcessesByName("msedge");
 
                     foreach(var proc in chromeProc)
                     {
@@ -168,6 +203,8 @@ namespace WPFCleaner.ViewModels.View
                                     browser = "Chrome";
                                 else if (file.FullName.Contains("Opera"))
                                     browser = "Opera";
+                                else if (file.FullName.Contains("Edge"))
+                                    browser = "Edge";
 
                                 ClearedCookieFileViewModel clearedCookieFile = new ClearedCookieFileViewModel()
                                 {
@@ -181,6 +218,8 @@ namespace WPFCleaner.ViewModels.View
 
                                 //clearing cookie file
                                 File.WriteAllText(file.FullName, string.Empty);
+                                
+                                CleaningFiles.Remove(file);
 
                                 //save info of the file to db
                                 unitOfWork.ClearedCookieFileRepository.CreateAsync(fileDb).Wait();

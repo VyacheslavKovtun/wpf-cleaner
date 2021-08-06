@@ -16,11 +16,35 @@
              FontFamily="{DynamicResource MaterialDesignFont}"
              d:DesignHeight="540" d:DesignWidth="1020">
     <Grid Background="#FF05191F">
-        <Button x:Name="CleanMemoryBtn" Style="{StaticResource MaterialDesignFloatingActionButton}" VerticalAlignment="Center" ToolTip="Clean Memory" Width="200" Height="200" Click="CleanMemoryBtn_Click">
-            <Label x:Name="CleanBtnTextLbl" FontSize="35" Foreground="LightGray">Clean</Label>
-        </Button>
-        <ProgressBar x:Name="CleanMemoryPB" Height="40" VerticalAlignment="Bottom"/>
-        <Label x:Name="ProgressLbl" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"></Label>
-        <fa:ImageAwesome x:Name="LoadingIcon" Icon="Refresh" VerticalAlignment="Center" Spin="True" Width="250" Height="250" Foreground="LightGray" Visibility="Hidden"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Button x:Name="CleanMemoryBtn" Style="{StaticResource MaterialDesignFloatingActionButton}" VerticalAlignment="Center" ToolTip="Clean Memory" Width="200" Height="200" Click="CleanMemoryBtn_Click">
+                <Label x:Name="CleanBtnTextLbl" FontSize="35" Foreground="LightGray">Clean</Label>
+            </Button>
+            <fa:ImageAwesome x:Name="LoadingIcon" Icon="Refresh" VerticalAlignment="Center" Spin="True" Width="250" Height="250" Foreground="LightGray" Visibility="Hidden"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Label FontSize="27" Foreground="LightGray" HorizontalAlignment="Center">Cleaning Files</Label>
+            <ListView x:Name="LVCleaning" ItemsSource="{Binding CleaningFiles}" Margin="0 50 0 0" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border x:Name="Border" Padding="8" BorderThickness="0 0 0 1" BorderBrush="{DynamicResource MaterialDesignDivider}">
+                            <!--File info-->
+                            <TextBlock Margin="5" Text="{Binding FullName}" FontSize="12" Foreground="LightGray" TextAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Grid Grid.ColumnSpan="2">
+            <ProgressBar x:Name="CleanMemoryPB" Height="40" VerticalAlignment="Bottom"/>
+            <Label x:Name="ProgressLbl" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"></Label>
+        </Grid>
     </Grid>
 </UserControl>
