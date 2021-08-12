@@ -22,7 +22,7 @@
       <FileName>Models\DBContext\DatabaseContext.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DBLibrary.Models.Entities.ClearedCookieFile" Collapsed="true">
+  <Class Name="DBLibrary.Models.Entities.ClearedCookieFile">
     <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAA=</HashCode>
@@ -30,7 +30,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="DBLibrary.Models.Entities.DeletedFile" Collapsed="true">
+  <Class Name="DBLibrary.Models.Entities.DeletedFile">
     <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAgAAAAAAAEAAAAAAAAQAAAAAAAABAAAA=</HashCode>
