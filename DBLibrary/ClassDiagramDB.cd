@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DBLibrary.Models.Base.BaseEntity&lt;T&gt;" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DBLibrary.Models.Base.BaseRepository&lt;TValue, TKey&gt;" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAABAAAAAAAAAAAAAAAgAIAAAIIAAAIA=</HashCode>
+      <FileName>Models\Base\BaseRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DBLibrary.Models.DBContext.DatabaseContext" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DBContext\DatabaseContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DBLibrary.Models.Entities.ClearedCookieFile" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAA=</HashCode>
+      <FileName>Models\Entities\ClearedCookieFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DBLibrary.Models.Entities.DeletedFile" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAgAAAAAAAEAAAAAAAAQAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Entities\DeletedFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DBLibrary.Models.Repository.ClearedCookieFileRepository" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Repository\ClearedCookieFileRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DBLibrary.Models.Repository.DeletedFileRepository" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Repository\DeletedFileRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DBLibrary.Models.Repository.UnitOfWork" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAgAAAAAAAABAAACAaAAAAAgAAAA=</HashCode>
+      <FileName>Models\Repository\UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="DBLibrary.Models.Base.IFile" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Base\IFile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DBLibrary.Models.Base.IRepositoryAsync&lt;TValue, TKey&gt;" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAIIAAAIA=</HashCode>
+      <FileName>Models\Base\IRepositoryAsync.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
